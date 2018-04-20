@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
+import Home from '../containters/Home/Home'
 import Header from '../components/header'
-import TaskList from '../containters/TaskList/TaskList';
 import Login from '../containters/Login/Login';
-
 
 
 const fetchStateFromLocalStorage = () => {
@@ -52,7 +51,7 @@ class App extends Component {
                     <Switch>
                         <PrivateRoute 
                             exact path="/" 
-                            component={TaskList} 
+                            component={Home} 
                             isAuthenticated={this.state.isAuthenticated}/>
                         <Route exact path="/login" 
                             render={props => 
