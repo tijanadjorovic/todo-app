@@ -22,13 +22,12 @@ class TaskList extends Component{
   render() {
     return (
       <div>
-        <h1>Task List</h1>
         {
           this.state.todos.slice(0,10).map(
               todo => <div
                   key={todo.id}>
                   <div >
-                    {todo.title}
+                    <p>{todo.title}</p>
                   </div>
                   </div>
           )
