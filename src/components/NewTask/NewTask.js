@@ -24,7 +24,7 @@ class NewTask extends Component {
  
             this.setState((prevState) => {
                 return { 
-                items: prevState.items.concat(newItem) 
+                items: prevState.items.concat(newItem)
                     };
                         });
    
