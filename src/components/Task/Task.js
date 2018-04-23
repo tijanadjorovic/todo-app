@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Task extends Component {
 
   createTasks(item) {
-    return <p key={item.key}>{item.text}</p>
+    return <li key={item.key}>{item.text} </li>
   }
  
   render() {

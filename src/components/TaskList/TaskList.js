@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import './TaskList.css';
+import OneToDo from '../OneToDo/OneToDo'
 
-class TaskList extends Component{
+class TaskList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: []
+      todos: [],
+      selectedToDo: []
     }
+
+    this.handleToDoClick = this.handleToDoClick.bind(this)
   }
 
   componentDidMount() {
@@ -14,24 +18,36 @@ class TaskList extends Component{
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data.slice(0,10));
-        this.setState({todos: data});
+          let allItems = data.slice(0,5);
+          this.setState({todos: allItems});
         });
+  }
+  
+  handleToDoClick(item){ 
+    console.log(item);
+    
+    this.setState({
+      selectedToDo: item
+    })
   }
 
   render() {
     return (
       <div>
-        {
-          this.state.todos.slice(0,10).map(
-              todo => <div
-                  key={todo.id}>
-                  <div >
-                    <p>{todo.title}</p>
-                  </div>
-                  </div>
-          )
-        }
+        <ul>{
+          this.state.todos.map(todo => 
+              <OneToDo     
+                key={todo.id}                    
+                clickhandler={this.handleToDoClick}
+                selectedToDoID={this.state.selectedToDo.id}
+                allData={this.state.todos}
+                item={todo}
+              />  
+            )            
+          }
+          
+        </ul>
+      
       </div>
     )    
   }
