@@ -12,6 +12,7 @@ class NewTask extends Component {
     };
 
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
     addItem(e){
@@ -33,6 +34,17 @@ class NewTask extends Component {
       e.preventDefault();
     }
 
+    deleteItem(key) {
+    var filteredItems = this.state.items.filter(function (item) {
+      return (item.key !== key);
+      });
+ 
+      this.setState({
+      items: filteredItems
+      });
+    }
+
+
     render(){
       return(
         <div>
@@ -41,7 +53,8 @@ class NewTask extends Component {
             </input>
             <button type="submit">add</button>
           </form>
-          <Task entries={this.state.items} />
+          <Task entries={this.state.items}
+                 delete={this.deleteItem} />
         </div>
       )
     }
