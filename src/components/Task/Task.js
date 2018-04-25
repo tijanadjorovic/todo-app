@@ -12,7 +12,9 @@ class Task extends Component {
  
     return (
       <div>
+      <ul>
           {listItems}
+      </ul>
       </div>
     );
   }
