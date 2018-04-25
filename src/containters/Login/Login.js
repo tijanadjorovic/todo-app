@@ -65,7 +65,7 @@ class Login extends React.Component {
         return (
             <div>
               <header>
-                <h1>Login</h1>
+                <p>Insert your mail and password:</p>
               </header>
               <Input
                   type="text"

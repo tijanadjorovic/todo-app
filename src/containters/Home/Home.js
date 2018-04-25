@@ -7,7 +7,7 @@ class Home extends React.Component {
         return (
             <div>
             	<h1>Task List</h1>
-            	<p>Enter your ToDo Task, and remove it by clicking on it</p>
+            	<p><i>Enter your ToDo Task, and remove it by clicking on it:</i></p>
             	<NewTask />
                 <TaskList />
             </div>

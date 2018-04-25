@@ -34,7 +34,7 @@ class TaskList extends Component {
   render() {
     return (
       <div>
-        <ul>{
+        <ul className="list" >{
           this.state.todos.map(todo => 
               <OneToDo     
                 key={todo.id}                    

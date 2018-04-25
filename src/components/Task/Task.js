@@ -23,7 +23,7 @@ class Task extends Component {
  
     return (
       <div>
-      <ul>
+      <ul className="list" >
         <FlipMove duration={250} easing="ease-out">
           {listItems}
         </FlipMove>
