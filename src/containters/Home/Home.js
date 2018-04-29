@@ -12,6 +12,7 @@ class Home extends React.Component {
       selectedToDo: []
     }
     this.addItem = this.addItem.bind(this);
+
     this.handleToDoClick = this.handleToDoClick.bind(this)
   }
     
@@ -37,6 +38,7 @@ class Home extends React.Component {
       this.setState({todos: todoItems});
     }
 
+
 // ispisuje u konzoli info o tasku na koji kliknes
     handleToDoClick(item){ 
       console.log(item);
@@ -50,26 +52,26 @@ class Home extends React.Component {
       console.log(this.state.todos);
       
       return (
-          <div>
-              <User/>
-            <h1>Task List</h1>
-            <p><i>Enter your ToDo Task, and remove it by clicking on it:</i></p>
-              
-              {/* prosledjuje NewTask komponenti funkciju addItem i niz sa svim taskovima (ovo je zbog racunanje duzine za id)*/}
-            <NewTask addItem={this.addItem} allData={this.state.todos}/>
-              <ul className="list" >{
-                this.state.todos.map(todo => 
-                  <OneToDo     
-                    key={todo.id}                    
-                    clickhandler={this.handleToDoClick}
-                    selectedToDoID={this.state.selectedToDo.id}
-                    allData={this.state.todos}
-                    item={todo}
-                  />  
-                  )            
-                  } 
-              </ul>
-          </div>
+        <div>
+          <User/>
+          <h1>Task List</h1>
+          <p><i>Enter your ToDo Task, and remove it by clicking on it:</i></p>
+            
+{/* prosledjuje NewTask komponenti funkciju addItem i niz sa svim taskovima (ovo je zbog racunanje duzine za id)*/}
+          <NewTask addItem={this.addItem} allData={this.state.todos} />
+            <ul className="list" >{
+              this.state.todos.map(todo => 
+                <OneToDo     
+                  key={todo.id}                    
+                  clickhandler={this.handleToDoClick}
+                  selectedToDoID={this.state.selectedToDo.id}
+                  allData={this.state.todos}
+                  item={todo}
+                />  
+              )            
+            } 
+            </ul>
+        </div>
       );
     }
 }

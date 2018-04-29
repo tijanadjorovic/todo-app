@@ -6,8 +6,10 @@ class OneToDo extends Component{
     this.state = {
         data: {}
     }   
+
   }
-//klikom na task ispusuje info taska u konzoli
+
+
   render(){
     const data = this.props.item;
     const clickhandler = this.props.clickhandler;  
@@ -15,8 +17,8 @@ class OneToDo extends Component{
     
     return (
       <li key={data.id} 
-          onClick={() => clickhandler(data)} > 
-          {/* dodati button delete */}
+          onClick={() => clickhandler(data)} >
+          {/* dodati button delete */}          
         {data.title}
       </li>
     );

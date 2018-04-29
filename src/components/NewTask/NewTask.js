@@ -12,7 +12,8 @@ class NewTask extends Component {
     };
 
     this.addItem = this.addItem.bind(this);
-    this.deleteItem = this.deleteItem.bind(this);
+    // this.deleteItem = this.deleteItem.bind(this);
+
   }
 
   // umesto Date.now() id se dobija tako sto se na duzinu niza dodaje 1
@@ -39,15 +40,16 @@ this._inputElement.value = "";
       e.preventDefault();
     }
 
-    deleteItem(key) {
-    var filteredItems = this.state.items.filter(function (item) {
-      return (item.key !== key);
-      });
+    // deleteItem(key) {
+    // var filteredItems = this.state.items.filter(function (item) {
+    //   return (item.key !== key);
+    //   });
  
-      this.setState({
-      items: filteredItems
-      });
-    }
+    //   this.setState({
+    //   items: filteredItems
+    //   });
+    // }
+
 
 
     render(){
