@@ -1,56 +1,59 @@
-import React, {Component} from 'react';
-import './TaskList.css';
-import OneToDo from '../OneToDo/OneToDo'
+//OVO JE PRAVILO LISTU, SAD JE TO PREBACENO U HOME..NECU ZA SAD DA JE BRISEM, MOZDA NEKO BUDE IMAO BOLJU IDEJU PA NEKA STOJI
 
-class TaskList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [],
-      selectedToDo: []
-    }
 
-    this.handleToDoClick = this.handleToDoClick.bind(this)
-  }
+// import React, {Component} from 'react';
+// import './TaskList.css';
+// import OneToDo from '../OneToDo/OneToDo'
 
-  componentDidMount() {
-    const url = `https://jsonplaceholder.typicode.com/todos`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-          let allItems = data.slice(0,5);
-          this.setState({todos: allItems});
-        });
-  }
+// class TaskList extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       todos: [],
+//       selectedToDo: []
+//     }
+
+//     this.handleToDoClick = this.handleToDoClick.bind(this)
+//   }
+
+//   componentDidMount() {
+//     const url = `https://jsonplaceholder.typicode.com/todos`;
+//     fetch(url)
+//       .then(response => response.json())
+//       .then(data => {
+//           let allItems = data.slice(0,5);
+//           this.setState({todos: allItems});
+//         });
+//   }
   
-  handleToDoClick(item){ 
-    console.log(item);
+//   handleToDoClick(item){ 
+//     console.log(item);
     
-    this.setState({
-      selectedToDo: item
-    })
-  }
+//     this.setState({
+//       selectedToDo: item
+//     })
+//   }
 
-  render() {
-    return (
-      <div>
-        <ul className="list" >{
-          this.state.todos.map(todo => 
-              <OneToDo     
-                key={todo.id}                    
-                clickhandler={this.handleToDoClick}
-                selectedToDoID={this.state.selectedToDo.id}
-                allData={this.state.todos}
-                item={todo}
-              />  
-            )            
-          }
+//   render() {
+//     return (
+//       <div>
+//         <ul className="list" >{
+//           this.state.todos.map(todo => 
+//               <OneToDo     
+//                 key={todo.id}                    
+//                 clickhandler={this.handleToDoClick}
+//                 selectedToDoID={this.state.selectedToDo.id}
+//                 allData={this.state.todos}
+//                 item={todo}
+//               />  
+//             )            
+//           }
           
-        </ul>
+//         </ul>
       
-      </div>
-    )    
-  }
-}
+//       </div>
+//     )    
+//   }
+// }
 
-export default TaskList;
+// export default TaskList;

@@ -15,12 +15,15 @@ class NewTask extends Component {
     this.deleteItem = this.deleteItem.bind(this);
   }
 
+  // umesto Date.now() id se dobija tako sto se na duzinu niza dodaje 1
+
     addItem(e){
       if (this._inputElement.value !== "") {
         let newItem = {
-          text: this._inputElement.value,
-          key: Date.now()
+          title: this._inputElement.value,
+          id: this.props.allData.length + 1
         };
+        console.log(this._inputElement.value);
  
       this.setState((prevState) => {
         return { 
@@ -28,8 +31,10 @@ class NewTask extends Component {
         };
       });
    
-      this._inputElement.value = "";
-      }
+// poziva se funkcija iz Home i prosledjuje joj se newItem objekat
+this.props.addItem({newItem});
+this._inputElement.value = "";
+}
      
       e.preventDefault();
     }
@@ -53,8 +58,8 @@ class NewTask extends Component {
             </input>
             <button type="submit">add</button>
           </form>
-          <Task entries={this.state.items}
-                 delete={this.deleteItem} />
+          {/* <Task entries={this.state.items}
+                 delete={this.deleteItem} /> */}
         </div>
       )
     }
