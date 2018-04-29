@@ -9,7 +9,6 @@ class OneToDo extends Component{
 
   }
 
-
   render(){
     const data = this.props.item;
     const clickhandler = this.props.clickhandler;  
@@ -17,9 +16,9 @@ class OneToDo extends Component{
     
     return (
       <li key={data.id} 
-          onClick={() => clickhandler(data)} >
-          {/* dodati button delete */}          
+          onClick={() => clickhandler(data)} > 
         {data.title}
+        <button onClick={() => this.props.removeItem(data.id)}>X</button>
       </li>
     );
   }
