@@ -31,7 +31,7 @@ class Login extends React.Component {
 
 
         if(email === '' || password === '') {
-            this.setState({isValid: false, invalidMessage: 'All fields must be filled'});
+            this.setState({isValid: false, invalidMessage: 'All required fields must be filled out.'});
             return;
         }
 
@@ -65,7 +65,7 @@ class Login extends React.Component {
         return (
             <div>
               <header>
-                <p>Insert your mail and password:</p>
+                <p>Enter your email and password:</p>
               </header>
               <Input
                   type="text"
@@ -73,7 +73,7 @@ class Login extends React.Component {
                   placeholder="Email"
                   handleChange={this.handleChange}
                   handleValidate={this.handleValidateEmail}
-                  invalidMessage="Email is not valid"
+                  invalidMessage="Please enter a valid email."
               />
               <Input
                   type="password"
@@ -81,7 +81,7 @@ class Login extends React.Component {
                   placeholder="Password"
                   handleChange={this.handleChange}
                   handleValidate={this.handleValidatePassword}
-                  invalidMessage="Password is not valid"
+                  invalidMessage="Please enter a valid password."
               />
               {!isValid && <div style={{color: 'red'}}>{invalidMessage}</div>}
               <Button
