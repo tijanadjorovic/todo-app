@@ -54,11 +54,11 @@ class Home extends React.Component {
       
       let allItems = this.state.todos
       // allItems.splice(itemIndex, 1);
-      let a = allItems.filter(el => el.id !== itemIndex)
+      let all = allItems.filter(element => element.id !== itemIndex)
      
       
       this.setState({
-          todos: a
+          todos: all
       });
   }
 
@@ -69,7 +69,7 @@ class Home extends React.Component {
         <div>
           <User/>
           <h1>Task List</h1>
-            	<p><i>Enter your ToDo Task, and remove it by clicking on it:</i></p>
+          <p><i>Enter your ToDo Task:</i></p>
                 
 {/* prosledjuje NewTask komponenti funkciju addItem i niz sa svim taskovima (ovo je zbog racunanje duzine za id)*/}
           <NewTask addItem={this.addItem} allData={this.state.todos}/>
