@@ -5,18 +5,18 @@ body {
   background-color: #f2f2f2;
 }
 #root{
-	display:flex;
 	justify-content:center;
 }
 .list{
 	padding: 10px;
 	color: #33331a;
+	width: 60%;
 
 }
 button{
-	padding: 10px;
-	font-size: 16px;
-	margin: 10px;
+	padding: 5px;
+	font-size: 10px;
+	margin: 5px;
 	color:white;
 	background-color: #5c8a8a;
 	border: 2px solid #f6f6ee;
@@ -37,7 +37,6 @@ input{
 	border: 2px solid #5c8a8a;
 	margin: 10px;
 }
-.list2{
-	padding: 10px;
-	color: #33331a;
+#details{
+	opacity: 0.5;
 }

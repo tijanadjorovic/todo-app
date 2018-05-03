@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import TaskDetails from '../TaskDetails/TaskDetails';
 
 class OneToDo extends Component{
   constructor(props){
@@ -18,7 +19,8 @@ class OneToDo extends Component{
       <li key={data.id} 
           onClick={() => clickhandler(data)} > 
         {data.title}
-        <button onClick={() => this.props.removeItem(data.id)}>X</button>
+        <button onClick={() => this.props.removeItem(data.id)}>remove</button>
+        <TaskDetails />
       </li>
     );
   }
