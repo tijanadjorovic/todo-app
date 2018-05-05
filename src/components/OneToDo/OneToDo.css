@@ -1,0 +1,17 @@
+.active {
+    color: green;
+}
+
+.check:after {   
+    content: 'Not done';
+}
+.unCheck:after {
+    content: 'Done';
+}
+
+button {
+    cursor: pointer;
+}
+span {
+    padding-left: 20px;
+}

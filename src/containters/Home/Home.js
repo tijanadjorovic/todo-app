@@ -79,6 +79,7 @@ class Home extends React.Component {
           <ul className="list" >{
             this.state.todos.map(todo => 
               <OneToDo     
+                markTodoDone={this.markTodoDone} 
                 removeItem={this.removeItem}
                 key={todo.id}                    
                 clickhandler={this.handleToDoClick}

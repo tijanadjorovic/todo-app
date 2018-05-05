@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './NewTask.css';
-import Task from '../Task/Task';
 
 class NewTask extends Component {
 

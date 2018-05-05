@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './OneToDo.css'
 
 class OneToDo extends Component{
   constructor(props){
@@ -6,7 +7,6 @@ class OneToDo extends Component{
     this.state = {
         data: {}
     }   
-
   }
 
   render(){
@@ -15,10 +15,10 @@ class OneToDo extends Component{
     
     return (
       <li key={data.id} 
-          onClick={() => clickhandler(data)} > 
+          onClick={() => clickhandler(data)} className={data.completed ? 'active' : ''}> 
         {data.title}
         <button onClick={() => this.props.markTodoDone(data)} className={data.completed ? 'check' : 'unCheck'}></button>
-        <button onClick={() => this.props.removeItem(data.id)}>remove</button>
+        <button onClick={() => this.props.removeItem(data.id)}>Remove</button>
       </li>
     );
   }
