@@ -13,27 +13,26 @@ class NewTask extends Component {
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
-
   }
 
   addItem(e){
     if (this._inputElement.value !== "") {
       let newItem = {
         title: this._inputElement.value,
-        id: Date.now()
+        id: Date.now(),
+        completed: false
       };
-      console.log(this._inputElement.value);
       
-    this.setState((prevState) => {
-      return { 
-        items: prevState.items.concat(newItem)
-      };
-    });
+      this.setState((prevState) => {
+        return { 
+          items: prevState.items.concat(newItem)
+        };
+      });
    
 // poziva se funkcija iz Home i prosledjuje joj se newItem objekat
-this.props.addItem({newItem});
-this._inputElement.value = "";
-}
+      this.props.addItem({newItem});
+      this._inputElement.value = "";
+    }
      
       e.preventDefault();
     }

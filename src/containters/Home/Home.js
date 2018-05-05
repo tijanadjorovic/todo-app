@@ -9,12 +9,13 @@ class Home extends React.Component {
     super(props);
     this.state = {
       todos: [],
+      detailsVisible: false,
       selectedToDo: []
     }
     this.addItem = this.addItem.bind(this);
     this.handleToDoClick = this.handleToDoClick.bind(this);
     this.removeItem = this.removeItem.bind(this);
-
+    this.markTodoDone = this.markTodoDone.bind(this);
   }
     
     componentDidMount() {
@@ -42,28 +43,30 @@ class Home extends React.Component {
 
 // ispisuje u konzoli info o tasku na koji kliknes
     handleToDoClick(item){ 
-      console.log(item);
-      
       this.setState({
-        selectedToDo: item
+        selectedToDo: item,
+        detailsVisible: true
       })
     }
 
-    removeItem (itemIndex) {
-      console.log(itemIndex);
-      
+    removeItem (itemIndex) {      
       let allItems = this.state.todos
-      // allItems.splice(itemIndex, 1);
       let all = allItems.filter(element => element.id !== itemIndex)
-     
-      
       this.setState({
           todos: all
       });
   }
+  markTodoDone(itemIndex) {        
+    const todo = this.state.todos;
+    
+    itemIndex.completed = !itemIndex.completed;
 
+    if(itemIndex.completed) {
+        todo[itemIndex] = itemIndex
+    }
+    this.setState({todos: todo});          
+  }
     render() { 
-      console.log(this.state.todos);
       
       return (
         <div>
