@@ -32,13 +32,9 @@ class Home extends React.Component {
         });
     }
 
-// prima info iz NewTaska na sta je kliknuto (todoItem)
     addItem(todoItem) {
-// pamti u let niz sa svim taskovima - zbog kraceg pisanja
       let todoItems = this.state.todos
-// stavlja ga u niz (unshift) sa svim taskovima
       todoItems.unshift(todoItem.newItem);
-// menja state sa svim taskovima (todos) sa novim taskom dodatim na prvo mesto
       this.setState({todos: todoItems});
     }
 
@@ -76,7 +72,6 @@ class Home extends React.Component {
           <h1>Task List</h1>
           <p><i>Enter your ToDo Task:</i></p>
                 
-{/* prosledjuje NewTask komponenti funkciju addItem i niz sa svim taskovima (ovo je zbog racunanje duzine za id)*/}
           <NewTask addItem={this.addItem} allData={this.state.todos}/>
           <ul className="list" >{
             this.state.todos.map(todo => 

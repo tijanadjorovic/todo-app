@@ -28,7 +28,6 @@ class NewTask extends Component {
         };
       });
    
-// poziva se funkcija iz Home i prosledjuje joj se newItem objekat
       this.props.addItem({newItem});
       this._inputElement.value = "";
     }
