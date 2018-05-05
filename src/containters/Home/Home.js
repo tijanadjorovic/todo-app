@@ -3,6 +3,8 @@ import TaskList from "../../components/TaskList/TaskList";
 import NewTask from "../../components/NewTask/NewTask";
 import User from "../../components/Users/users.js";
 import OneToDo from "../../components/OneToDo/OneToDo";
+import TaskDetails from "../../components/TaskDetails/TaskDetails";
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -41,11 +43,10 @@ class Home extends React.Component {
     }
 
 
-// ispisuje u konzoli info o tasku na koji kliknes
-    handleToDoClick(item){ 
+    handleToDoClick(item){           
       this.setState({
-        selectedToDo: item,
-        detailsVisible: true
+          selectedTask: item,
+          detailsVisible: true
       })
     }
 
@@ -56,18 +57,19 @@ class Home extends React.Component {
           todos: all
       });
   }
-  markTodoDone(itemIndex) {        
-    const todo = this.state.todos;
-    
-    itemIndex.completed = !itemIndex.completed;
+    markTodoDone(itemIndex) {        
+      const todo = this.state.todos;
+      itemIndex.completed = !itemIndex.completed;
 
-    if(itemIndex.completed) {
-        todo[itemIndex] = itemIndex
+      if(itemIndex.completed) {
+          todo[itemIndex] = itemIndex
+      }
+      this.setState({todos: todo});          
     }
-    this.setState({todos: todo});          
-  }
+
     render() { 
-      
+      const showDetails = this.state.detailsVisible ? <div className="details"><TaskDetails allInfo={this.state.selectedTask} /></div> : null
+
       return (
         <div>
           <User/>
@@ -83,13 +85,14 @@ class Home extends React.Component {
                 removeItem={this.removeItem}
                 key={todo.id}                    
                 clickhandler={this.handleToDoClick}
-                selectedToDoID={this.state.selectedToDo.id}
+                selectedTask={this.state.detailsVisible}
                 allData={this.state.todos}
                 item={todo}
               />  
             )            
           } 
           </ul>
+          {showDetails}
         </div>
       );
     }
