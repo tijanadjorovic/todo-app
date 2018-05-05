@@ -11,8 +11,7 @@ const TaskDetails = (props) =>{
   
   return (
   <div>
-    <h3>Title: {info.title}</h3>   
-    <p>ID: {info.id}</p>
+    <h3>Task: {info.title}</h3>   
     <p>Task status: {a}</p>
   </div>
   );
