@@ -63,7 +63,7 @@ class Login extends React.Component {
       <div>
         <header>
           <h1>To Do Application</h1>
-          <h4>Organize your work with and be more productive.</h4>
+          <h4>Organize your work with this Task Manager, and be more productive.</h4>
           <p>Enter your email and password.</p>
           <p>Make sure that your mail is valid, and password contains from 5 to 25 characters.</p>
         </header>
