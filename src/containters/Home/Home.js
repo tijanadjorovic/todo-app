@@ -4,6 +4,7 @@ import NewTask from "../../components/NewTask/NewTask";
 import User from "../../components/Users/users.js";
 import OneToDo from "../../components/OneToDo/OneToDo";
 import TaskDetails from "../../components/TaskDetails/TaskDetails";
+import './Home.css';
 
 
 class Home extends React.Component {
@@ -67,7 +68,7 @@ class Home extends React.Component {
       const showDetails = this.state.detailsVisible ? <div className="details"><TaskDetails allInfo={this.state.selectedTask} /></div> : null
 
       return (
-        <div>
+        <div className="home">
           <User/>
           <h1>Task List</h1>
           <p><i>Enter your ToDo Task:</i></p>
