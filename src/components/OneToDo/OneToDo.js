@@ -18,7 +18,7 @@ class OneToDo extends Component{
           onClick={() => clickhandler(data)} className={data.completed ? 'active' : ''}> 
         {data.title}
         <button onClick={() => this.props.markTodoDone(data)} className={data.completed ? 'check' : 'unCheck'}></button>
-        <button onClick={() => this.props.removeItem(data.id)}>Remove</button>
+        <button className='del' onClick={() => this.props.removeItem(data.id)}>Remove</button>
       </li>
     );
   }

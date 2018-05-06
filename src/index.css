@@ -13,6 +13,13 @@ body {
 	width: 60%;
 
 }
+button.del{
+	background-color: #ff1a1a;
+}
+button.del:hover{
+	background-color: #ff5050;
+}
+
 button{
 	padding: 5px;
 	font-size: 10px;

@@ -4,9 +4,9 @@ const TaskDetails = (props) =>{
   let info = props.allInfo
   let a = '';
   if(info.completed) {
-    a = 'Completed'
+    a = 'Completed!'
   }else {
-    a = 'Not completed'
+    a = 'In progress...'
   }
   
   return (
