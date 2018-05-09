@@ -2,7 +2,8 @@
 	text-align: left;
 	padding: 5%;
 }
-h1,p{
+
+.hp{
 	position: relative;
-	left: 330px;
+	left: 300px;
 }
