@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <div id="top">
       {props.redirectToReferrer && <span>  
-        <button onClick={() => props.handleSignOut()} id="logout">Log Out</button>
+        <button onClick={() => props.handleSignOut()}>Log Out</button>
       </span>}
     </div>
   )

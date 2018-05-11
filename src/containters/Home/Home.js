@@ -70,10 +70,9 @@ class Home extends React.Component {
       return (
         <div className="home">
           <User/>
-          <div className="hp">
           <h1>Task List</h1>
           <p><i>Enter your ToDo Task:</i></p>
-            </div>    
+                
           <NewTask addItem={this.addItem} allData={this.state.todos}/>
           <ul className="list" >{
             this.state.todos.map(todo => 

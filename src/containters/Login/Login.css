@@ -2,7 +2,3 @@ body{
 	text-align: center;
 	jusstify-content: center;
 }
-h1,h4,p,input{
-	position: relative;
-	left:20px;
-}

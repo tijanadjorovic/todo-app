@@ -49,9 +49,9 @@ class NewTask extends Component {
       return(
         <div className="listMain" >
           <form onSubmit={this.addItem} >
-            <input id= "input" ref={(a) => this._inputElement = a} placeholder="enter task">
+            <input ref={(a) => this._inputElement = a} placeholder="enter task">
             </input>
-            <button type="submit" id="add">add</button>
+            <button type="submit">add</button>
           </form>
         </div>
       )
